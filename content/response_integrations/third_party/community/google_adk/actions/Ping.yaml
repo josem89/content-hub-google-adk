@@ -1,0 +1,18 @@
+name: Ping
+description: Tests connectivity and authentication with Google Vertex AI / Gemini
+  API. Executes a lightweight handshake using configured credentials to verify that
+  the selected model is accessible and responsive.
+integration_identifier: GoogleADK
+parameters:
+- name: Model Name
+  type: string
+  is_mandatory: false
+  default_value: gemini-3.7-flash
+  description: The Gemini model ID to test connectivity against (e.g. 'gemini-3.7-flash').
+    Defaults to integration configuration if omitted.
+  display_name: Model Name
+dynamic_results_metadata:
+- result_example_path: resources/Ping_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

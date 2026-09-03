@@ -1,0 +1,39 @@
+name: Run Code Execution Agent
+description: Launches a Google ADK Agent that utilizes Gemini's native, built-in Python
+  execution tool. Executes Python code natively within Google's backend API lifecycle
+  to handle data manipulation, mathematical operations, and log formatting without
+  requiring a dedicated sandbox container.
+integration_identifier: GoogleADK
+parameters:
+- name: User Prompt
+  type: string
+  is_mandatory: true
+  default_value: Calculate the first 10 elements of the fibonacci sequence
+  description: The analytical task or computation instruction for the code execution
+    agent.
+  display_name: User Prompt
+- name: Thinking Budget
+  type: string
+  is_mandatory: false
+  default_value: '1024'
+  description: Thinking budget (token count) for model reasoning (e.g. 1024).
+  display_name: Thinking Budget
+- name: Enable Memory
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to equip the agent with persistent long-term memory via Vertex
+    AI Memory Bank.
+  display_name: Enable Memory
+- name: Session ID
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Optional session identifier to scope memory context. Defaults to active
+    case ID (case_<CaseId>).
+  display_name: Session ID
+dynamic_results_metadata:
+- result_example_path: resources/Run Code Execution Agent_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

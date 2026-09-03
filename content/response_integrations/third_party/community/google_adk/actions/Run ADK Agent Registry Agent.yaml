@@ -1,0 +1,40 @@
+name: Run ADK Agent Registry Agent
+description: Invokes an ADK Agent registered in the Google Cloud Agent Registry /
+  Vertex AI Reasoning Engine endpoint to execute autonomous multi-turn investigations.
+integration_identifier: GoogleADK
+parameters:
+- name: Agent Registry Project ID
+  type: string
+  is_mandatory: false
+  default_value: my-gcp-project
+  description: Agent Registry Project ID
+  display_name: Agent Registry Project ID
+- name: Agent Registry Location
+  type: string
+  is_mandatory: false
+  default_value: us-central1
+  description: Agent Registry Location
+  display_name: Agent Registry Location
+- name: Agent Name
+  type: string
+  is_mandatory: false
+  default_value: projects/my-gcp-project/locations/us-central1/agents/sample-agent-id
+  description: Agent Name
+  display_name: Agent Name
+- name: Reasoning Engine Name
+  type: string
+  is_mandatory: false
+  default_value: projects/123456789012/locations/us-central1/reasoningEngines/1234567890123456789
+  description: Reasoning Engine Name
+  display_name: Reasoning Engine Name
+- name: User Query
+  type: string
+  is_mandatory: false
+  default_value: Can you pull the overview details for security case ID 10001?
+  description: User Query
+  display_name: User Query
+dynamic_results_metadata:
+- result_example_path: resources/Run ADK Agent Registry Agent_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

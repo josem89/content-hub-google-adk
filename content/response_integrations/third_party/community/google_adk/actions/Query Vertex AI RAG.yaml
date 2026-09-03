@@ -1,0 +1,28 @@
+name: Query Vertex AI RAG
+description: Queries a Vertex AI RAG (Retrieval-Augmented Generation) Corpus to retrieve
+  context-rich semantic search results. The action resolves the target RAG corpus
+  ID, executes a vector search with user-configured limits (Top K), and extracts relevant
+  historical cases, runbooks, or policy documentation. Structured findings are loaded
+  directly into programmatic JSON outputs for downstream playbook logic and displayed
+  on the Case Wall.
+integration_identifier: GoogleADK
+parameters:
+- name: Query Text
+  type: string
+  is_mandatory: true
+  default_value: ''
+  description: The semantic search text or question to query against the RAG knowledge
+    base.
+  display_name: Query Text
+- name: Top K
+  type: string
+  is_mandatory: false
+  default_value: '5'
+  description: 'The maximum number of relevant context snippets to retrieve (default:
+    5).'
+  display_name: Top K
+dynamic_results_metadata:
+- result_example_path: resources/Query Vertex AI RAG_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

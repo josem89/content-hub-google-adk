@@ -1,0 +1,46 @@
+name: Run Code Execution Agent Sandbox
+description: Launches a Google ADK Agent equipped with a secure, isolated Python execution
+  sandbox (Vertex AI Agent Engine Sandbox). The agent dynamically writes, executes,
+  and inspects Python code to solve complex analytical tasks such as log parsing,
+  mathematical computations, data transformations, or nested JSON parsing.
+integration_identifier: GoogleADK
+parameters:
+- name: User Prompt
+  type: string
+  is_mandatory: true
+  default_value: Calculate the first 10 numbers in the fibonacci sequence
+  description: The analytical task or computation instruction for the code execution
+    agent.
+  display_name: User Prompt
+- name: Thinking Budget
+  type: string
+  is_mandatory: false
+  default_value: '1024'
+  description: Thinking budget (token count) for model reasoning (e.g. 1024).
+  display_name: Thinking Budget
+- name: Agent Engine Resource Name
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Optional Vertex AI Agent Engine resource path (e.g. 'projects/.../reasoningEngines/...').
+    If omitted, falls back to integration configuration.
+  display_name: Agent Engine Resource Name
+- name: Enable Memory
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to equip the agent with persistent long-term memory via Vertex
+    AI Memory Bank.
+  display_name: Enable Memory
+- name: Session ID
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Optional session identifier to scope memory context. Defaults to active
+    case ID (case_<CaseId>).
+  display_name: Session ID
+dynamic_results_metadata:
+- result_example_path: resources/Run Code Execution Agent Sandbox_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

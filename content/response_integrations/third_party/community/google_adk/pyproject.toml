@@ -1,0 +1,31 @@
+[project]
+name = "google_adk_integration"
+version = "1.0"
+description = "Provides native execution of Google Agent Development Kit (ADK) agents within SecOps playbooks. Supports multi-turn investigation memory, Vertex AI RAG ingestion, dynamic MCP tool calling, and isolated code execution via Vertex AI Reasoning Engine."
+authors = [
+    { name = "Christopher Martin", email = "cmmartin@google.com" },
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    
+    "google_genai",
+    "mcp",
+    "fastapi",
+    "google_cloud_storage",
+    "google_auth",
+    "google-adk",
+    "watchdog",
+]
+
+[dependency-groups]
+dev = [ "pytest", "pytest-json-report", "soar-sdk",]
+
+[tool.uv]
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+default = true
+
+[tool.uv.sources]
+
+soar-sdk = { git = "https://github.com/chronicle/soar-sdk.git" }
+watchdog = { path = "./resources/watchdog-6.0.0-py3-none-manylinux_2_17_x86_64.whl"}

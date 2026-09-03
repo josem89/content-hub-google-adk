@@ -1,0 +1,5 @@
+{
+    "Gemini API Key": "mock-api-key",
+    "GCP Project ID": "mock-project-id",
+    "Verify SSL": true
+}

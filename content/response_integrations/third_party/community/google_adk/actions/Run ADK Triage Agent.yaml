@@ -1,0 +1,39 @@
+name: Run ADK Triage Agent
+description: Executes an automated Tier 1 alert triage agent pipeline powered by Google
+  ADK. Performs multi-stage security case analysis, context retrieval, evidence gathering,
+  and publishes reasoning, verdict, and recommended remediation actions to the Case
+  Wall.
+integration_identifier: GoogleADK
+parameters:
+- name: Dry Run
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: If true, runs triage analysis without posting status changes or comments
+    to the case.
+  display_name: Dry Run
+- name: Triage Identity
+  type: string
+  is_mandatory: false
+  default_value: '@Tier1'
+  description: The triage analyst identity or tag to associate with this triage run.
+  display_name: Triage Identity
+- name: Enable Memory
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to equip the agent with persistent long-term memory via Vertex
+    AI Memory Bank.
+  display_name: Enable Memory
+- name: Session ID
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Optional session identifier to scope memory context. Defaults to active
+    case ID (case_<CaseId>).
+  display_name: Session ID
+dynamic_results_metadata:
+- result_example_path: resources/Run ADK Triage Agent_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

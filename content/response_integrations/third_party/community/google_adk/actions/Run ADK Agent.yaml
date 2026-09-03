@@ -1,0 +1,50 @@
+name: Run ADK Agent
+description: Executes a customized Google ADK Agent that compiles system instructions,
+  reasoning parameters, and optional OSINT search capabilities. Returns structured
+  JSON results to downstream playbook steps while posting agent reasoning and final
+  analysis to the Case Wall.
+integration_identifier: GoogleADK
+parameters:
+- name: Agent Name
+  type: string
+  is_mandatory: false
+  default_value: Logic_Analyst_Agent
+  description: Logical name for the agent instance.
+  display_name: Agent Name
+- name: User Prompt
+  type: string
+  is_mandatory: true
+  default_value: What is Google ADK?
+  description: The prompt or instruction to send to the Google ADK Agent.
+  display_name: User Prompt
+- name: Thinking Budget
+  type: string
+  is_mandatory: false
+  default_value: '1024'
+  description: Thinking budget (token count) for model reasoning (e.g. 1024).
+  display_name: Thinking Budget
+- name: Enable Google Search
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to equip the agent with Google Search for real-time web research.
+  display_name: Enable Google Search
+- name: Enable Memory
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to equip the agent with persistent long-term memory via Vertex
+    AI Memory Bank.
+  display_name: Enable Memory
+- name: Session ID
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Optional session identifier to scope memory context. Defaults to active
+    case ID (case_<CaseId>).
+  display_name: Session ID
+dynamic_results_metadata:
+- result_example_path: resources/Run ADK Agent_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

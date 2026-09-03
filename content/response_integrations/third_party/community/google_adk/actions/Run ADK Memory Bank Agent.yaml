@@ -1,0 +1,48 @@
+name: Run ADK Memory Bank Agent
+description: Runs a persistent memory-augmented Google ADK Agent backed by Vertex
+  AI Memory Bank. Supports long-term conversational recall across security investigations
+  and case sessions.
+integration_identifier: GoogleADK
+parameters:
+- name: User Prompt
+  type: string
+  is_mandatory: true
+  default_value: Search memory for security incident details
+  description: The query or instruction for the memory-augmented agent.
+  display_name: User Prompt
+- name: Session ID
+  type: string
+  is_mandatory: false
+  default_value: default
+  description: Session identifier for isolating memory contexts.
+  display_name: Session ID
+- name: Memory Mode
+  type: string
+  is_mandatory: false
+  default_value: Memory Bank
+  description: Memory engine backend ('Memory Bank' or 'InMemory').
+  display_name: Memory Mode
+- name: Preload Memory
+  type: boolean
+  is_mandatory: false
+  default_value: true
+  description: Whether to preload previous session memory into the agent context before
+    execution.
+  display_name: Preload Memory
+- name: Thinking Budget
+  type: string
+  is_mandatory: false
+  default_value: '1024'
+  description: Thinking budget for reasoning models (e.g. 1024).
+  display_name: Thinking Budget
+- name: Agent Engine ID
+  type: string
+  is_mandatory: false
+  default_value: '1234567890123456789'
+  description: Vertex AI Agent Engine resource ID for managed memory operations.
+  display_name: Agent Engine ID
+dynamic_results_metadata:
+- result_example_path: resources/Run ADK Memory Bank Agent_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

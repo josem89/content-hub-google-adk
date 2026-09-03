@@ -1,0 +1,9 @@
+[project]
+name = "pyarrow"
+version = "24.0.0"
+description = "Dummy pyarrow to satisfy dependency"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

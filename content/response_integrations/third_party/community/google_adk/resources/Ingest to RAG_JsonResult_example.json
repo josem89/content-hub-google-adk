@@ -1,0 +1,5 @@
+{
+  "status": "success",
+  "action": "Ingest to RAG",
+  "raw_output": "sample output"
+}

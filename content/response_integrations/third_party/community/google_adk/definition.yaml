@@ -1,0 +1,92 @@
+identifier: GoogleADK
+name: Google ADK
+description: "Provides native execution of Google Agent Development Kit (ADK) agents within SecOps playbooks. Supports multi-turn investigation memory, Vertex AI RAG ingestion, dynamic MCP tool calling, and isolated code execution via Vertex AI Reasoning Engine."
+parameters:
+- name: Gemini API Key
+  default_value: null
+  type: password
+  description: 'Google Gemini API Key. Optional if using Service Account JSON authentication for Vertex AI.'
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: Gemini API Key
+- name: GCP Project ID
+  default_value: null
+  type: string
+  description: 'Google Cloud Project ID hosting Vertex AI, RAG Corpora, and Agent Engine resources.'
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: GCP Project ID
+- name: Service Account JSON
+  default_value: null
+  type: password
+  description: 'JSON Service Account key with permissions for Vertex AI, Cloud Storage, or SecOps MCP tools.'
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: Service Account JSON
+- name: MCP Server URL
+  default_value: 'https://chronicle.us.rep.googleapis.com/mcp'
+  type: string
+  description: "URL endpoint for Google-hosted Model Context Protocol (MCP) server (e.g. 'https://chronicle.us.rep.googleapis.com/mcp')."
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: MCP Server URL
+- name: SecOps Customer ID
+  default_value: null
+  type: string
+  description: 'Google SecOps customer ID (UUID) for tenant-scoped MCP operations.'
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: SecOps Customer ID
+- name: SecOps Region
+  default_value: 'us-central1'
+  type: string
+  description: "Google Cloud / SecOps region for Vertex AI and MCP endpoints (e.g. 'us-central1', 'europe-west1')."
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: SecOps Region
+- name: SecOps Project ID
+  default_value: null
+  type: string
+  description: 'Google Cloud Project ID associated with the Google SecOps tenant (if different from GCP Project ID).'
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: SecOps Project ID
+- name: Model Name
+  default_value: 'gemini-3.7-flash'
+  type: string
+  description: "Default Gemini model version for ADK agents (e.g. 'gemini-3.7-flash', 'gemini-2.5-pro')."
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: Model Name
+- name: RAG Corpus Name
+  default_value: null
+  type: string
+  description: "Vertex AI RAG Corpus display name or numeric ID (e.g. 'threat-intel-kb' or '1234567890')."
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: RAG Corpus Name
+- name: RAG GCS Bucket
+  default_value: null
+  type: string
+  description: "Google Cloud Storage bucket name for RAG document ingestion (without 'gs://' prefix)."
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: RAG GCS Bucket
+- name: Agent Engine Resource Name
+  default_value: null
+  type: string
+  description: "Vertex AI Agent Engine resource path for isolated Python sandbox code execution (e.g. 'projects/PROJECT_ID/locations/LOCATION/reasoningEngines/ID')."
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: Agent Engine Resource Name
+- name: Verify SSL
+  default_value: true
+  type: boolean
+  description: 'Verify SSL certificates'
+  is_mandatory: false
+  integration_identifier: GoogleADK
+  display_name: Verify SSL
+documentation_link: 'https://example.com'
+categories: []
+svg_logo_path: resources/logo.svg
+image_path: resources/image.png

@@ -1,0 +1,5 @@
+{
+  "status": "success",
+  "action": "Query Vertex AI RAG",
+  "raw_output": "sample output"
+}

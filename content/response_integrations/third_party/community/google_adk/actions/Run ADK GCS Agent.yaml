@@ -1,0 +1,49 @@
+name: Run ADK GCS Agent
+description: Launches a Google ADK Agent integrated with Google Cloud Storage tools.
+  Allows the agent to read, write, or manage objects and buckets based on configured
+  permissions.
+integration_identifier: GoogleADK
+parameters:
+- name: User Prompt
+  type: string
+  is_mandatory: true
+  default_value: List available buckets
+  description: The prompt for your ADK Agent
+  display_name: User Prompt
+- name: Allow GCS Write
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to allow write operations to GCS
+  display_name: Allow GCS Write
+- name: Allow GCS Admin
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to allow GCS Admin
+  display_name: Allow GCS Admin
+- name: Thinking Budget
+  type: string
+  is_mandatory: false
+  default_value: '1024'
+  description: Thinking budget for reasoning models (e.g. 1024).
+  display_name: Thinking Budget
+- name: Enable Memory
+  type: boolean
+  is_mandatory: false
+  default_value: false
+  description: Whether to equip the agent with persistent long-term memory via Vertex
+    AI Memory Bank.
+  display_name: Enable Memory
+- name: Session ID
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Optional session identifier to scope memory context. Defaults to active
+    case ID (case_<CaseId>).
+  display_name: Session ID
+dynamic_results_metadata:
+- result_example_path: resources/Run ADK GCS Agent_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin

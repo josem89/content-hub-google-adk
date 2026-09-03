@@ -1,0 +1,40 @@
+name: Ingest to RAG
+description: 'Ingests dynamic case content, security indicators, or threat intelligence
+  directly into the Vertex AI RAG (Retrieval-Augmented Generation) Knowledge Base.
+  The action uploads sanitized files to the designated Google Cloud Storage ingestion
+  bucket, associates structured metadata for semantic query partitioning, and triggers
+  an immediate RAG Engine index refresh. Built with fail-fast validation, path traversal
+  defenses, size limits (up to 1MB), and a clean, consolidated Case Wall audit trail.
+
+  '
+integration_identifier: GoogleADK
+parameters:
+- name: Content
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Content
+  display_name: Content
+- name: Filename
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Filename
+  display_name: Filename
+- name: Metadata JSON
+  type: string
+  is_mandatory: false
+  default_value: ''
+  description: Metadata JSON
+  display_name: Metadata JSON
+- name: Append to Existing
+  type: boolean
+  is_mandatory: false
+  default_value: true
+  description: Append to Existing
+  display_name: Append to Existing
+dynamic_results_metadata:
+- result_example_path: resources/Ingest to RAG_JsonResult_example.json
+  result_name: JsonResult
+  show_result: true
+creator: Christopher Martin
