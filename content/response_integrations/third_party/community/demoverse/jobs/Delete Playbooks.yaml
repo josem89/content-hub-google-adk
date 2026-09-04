@@ -1,0 +1,12 @@
+creator: fransantos@google.com
+description: "Deletes playbooks and blocks that are not on the whitelist or not created\
+  \ by an authorized user."
+integration: Demoverse
+name: Delete Playbooks
+parameters:
+-   default_value: ''
+    description: "A comma-separated list of playbook names to exclude from deletion.\
+      \ Playbooks with names containing any of these strings will be kept."
+    is_mandatory: false
+    name: Playbook Names
+    type: string

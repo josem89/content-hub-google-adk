@@ -1,0 +1,39 @@
+[project]
+name = "Demoverse"
+version = "3.3"
+description = "A demonstration integration that syncs content with a Git repository and replays SecOps use cases."
+authors = [
+    { name = "Jose Marin", email = "josemarin@google.com" },
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "pympler>=1.0.1,<2.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "google-cloud-storage",
+    "python-evtx",
+    "hexdump",
+    "tipcommon",
+    "environmentcommon",
+]
+
+[dependency-groups]
+dev = [
+    "environmentcommon",
+    "pytest-json-report>=1.5.0",
+    "pytest>=8.3.5",
+    "soar-sdk",
+    "tipcommon",
+    "integration_testing"  
+]
+
+[tool.uv]
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+default = true
+
+[tool.uv.sources]
+soar-sdk = { git = "https://github.com/chronicle/soar-sdk.git" }
+environmentcommon = { path = "../../../../../packages/envcommon/whls/EnvironmentCommon-1.0.3-py3-none-any.whl" }
+hexdump = { path = "./resources/hexdump-3.3-py3-none-any.whl" }
+integration_testing = { path = "../../../../../packages/integration_testing_whls/integration_testing-2.2.11-py3-none-any.whl" }
+tipcommon = { path = "../../../../../packages/tipcommon/whls/TIPCommon-2.3.5-py3-none-any.whl"}

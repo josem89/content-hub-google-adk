@@ -1,0 +1,27 @@
+creator: josemarin@google.com
+description: "Replays entity data from use cases stored in a GCS bucket to Google SecOps."
+name: Replay Use Cases Entities V2
+integration: Demoverse
+parameters:
+-   name: Use Case Whitelist
+    default_value: folder:usecase
+    type: string
+    description: "List of whitelisted Use Cases"
+    is_mandatory: true
+-   name: GCS Bucket Name
+    type: string
+    description: "GCS Bucket Name to use"
+    is_mandatory: false
+-   name: GCS Prefix
+    type: string
+    description: "GCS Prefix/Folder"
+    is_mandatory: false
+-   name: GCS SA Key
+    type: password
+    description: "GCS Service Account JSON Key"
+    is_mandatory: false
+-   name: GCS Workload Identity Email
+    type: string
+    description: "GCS Workload Identity Email"
+    is_mandatory: false
+

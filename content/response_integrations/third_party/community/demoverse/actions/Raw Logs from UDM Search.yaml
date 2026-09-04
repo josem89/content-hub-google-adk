@@ -1,0 +1,29 @@
+creator: josemarin@google.com
+description: "Searches for UDM events in Google SecOps and extracts the original\
+  \ raw logs, preparing them for use in other Demoverse actions."
+dynamic_results_metadata:
+-   result_example: '{}'
+    result_name: JsonResult
+    show_result: true
+integration_identifier: Demoverse
+name: Raw Logs from UDM Search
+parameters:
+-   default_value: user = "Test"
+    description: "The UDM search filter used to find events. Example `principal.user.userid\
+      \ = \"test_user\"`."
+    is_mandatory: true
+    name: Udm Query
+    type: string
+-   default_value: null
+    description: "The start of the time window for the UDM search. Must be in UTC.\
+      \ Format `YYYY-MM-DDTHH:MI:SSZ`."
+    is_mandatory: true
+    name: Start Time
+    type: string
+-   default_value: ''
+    description: "The end of the time window for the UDM search. If left blank, the\
+      \ current time is used. Must be in UTC. Format `YYYY-MM-DDTHH:MI:SSZ`."
+    is_mandatory: false
+    name: End Time
+    type: string
+script_result_name: ScriptResult

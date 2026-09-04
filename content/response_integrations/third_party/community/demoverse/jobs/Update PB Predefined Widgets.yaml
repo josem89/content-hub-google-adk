@@ -1,0 +1,12 @@
+creator: josemarin@google.com
+description: "Updates predefined widgets in playbooks to their latest versions."
+name: Update PB Predefined Widgets
+integration: Demoverse
+parameters:
+-   default_value: ''
+    description: "A comma-separated list of playbook folder names. Only playbooks\
+      \ within these folders will be updated."
+    is_mandatory: false
+    name: Playbook Folders
+    type: string
+

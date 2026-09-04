@@ -1,0 +1,37 @@
+creator: josemarin@google.com
+description: "Synchronizes detection rules from a Google SecOps instance to a GCS bucket."
+name: Push Detection Rules V2
+integration: Demoverse
+parameters:
+
+-   name: Rules
+    default_value: rule_name
+    type: string
+    description: "Rules list to create"
+    is_mandatory: true
+-   name: Live Rule
+    default_value: 'true'
+    type: boolean
+    description: "Whether to make rules live or not"
+    is_mandatory: false
+-   name: Alerting Rule
+    default_value: 'true'
+    type: boolean
+    description: "Whether rule will create alerts or not"
+    is_mandatory: false
+-   name: GCS Bucket Name
+    type: string
+    description: "GCS Bucket Name to use"
+    is_mandatory: false
+-   name: GCS Prefix
+    type: string
+    description: "GCS Prefix/Folder"
+    is_mandatory: false
+-   name: GCS SA Key
+    type: password
+    description: "GCS Service Account JSON Key"
+    is_mandatory: false
+-   name: GCS Workload Identity Email
+    type: string
+    description: "GCS Workload Identity Email"
+    is_mandatory: false

@@ -1,0 +1,48 @@
+creator: josemarin@google.com
+description: "Imports events from one or more use case directories into Google SecOps,\
+    \ optionally updating timestamps to the present."
+dynamic_results_metadata:
+-   result_example: '{}'
+    result_name: JsonResult
+    show_result: true
+integration_identifier: Demoverse
+name: Import Events from Usecase
+parameters:
+-   default_value: null
+    description: "The end timestamp of the original time window to filter logs from\
+        the use case files. Only logs with timestamps on or before this date will\
+        be considered. Format 'YYYY-MM-DDTHH:MM:SS'."
+    is_mandatory: false
+    name: Date of Last Log
+    type: string
+-   default_value: /opt/tmp/demoverse/usecases
+    description: "A comma-separated list of paths to the use case directories containing\
+        \ the event files to be imported."
+    is_mandatory: false
+    name: Usecase Paths
+    type: string
+-   default_value: null
+    description: "The Google SecOps namespace where the events will be imported."
+    is_mandatory: false
+    name: Namespace
+    type: string
+-   default_value: '{"key":"Value"}'
+    description: "A JSON object of key-value pairs to be added as ingestion labels\
+        \ to all imported events."
+    is_mandatory: false
+    name: Labels
+    type: CODE
+-   default_value: 'true'
+    description: "If enabled, timestamps of the selected logs will be updated to a\
+        \ current time window while preserving their relative order."
+    is_mandatory: false
+    name: Update Timestamps
+    type: boolean
+-   default_value: null
+    description: "The start timestamp of the original time window to filter logs from\
+        \ the use case files. Only logs with timestamps on or after this date will\
+        \ be considered. Format 'YYYY-MM-DDTHH:MM:SS'."
+    is_mandatory: false
+    name: Date of First Log
+    type: string
+script_result_name: isSuccess

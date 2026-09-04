@@ -1,0 +1,15 @@
+{
+        "firstLogTime": "2023-06-08T18:01:37",
+        "lastLogTime": "2023-06-08T21:48:47",
+        "timeWindow": {
+          "days": 0,
+          "hours": 3,
+          "minutes": 47,
+          "seconds": 9
+        },
+        "logTypeEntriesCount": {
+          "WINEVTLOG": 45,
+          "WINDOWS_SYSMON": 16
+        },
+        "useCasePath": "/opt/tmp/usecases/GTI_Sandbox/testusecase"
+      }

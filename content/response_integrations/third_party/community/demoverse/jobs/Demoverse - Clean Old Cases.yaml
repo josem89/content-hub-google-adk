@@ -1,0 +1,21 @@
+creator: josemarin@google.com
+description: "A job to clean up old cases in specified environments."
+name: Demoverse - Clean Old Cases
+integration: Demoverse
+parameters:
+-   name: Relevant Environments
+    default_value: LogStory,Cymbal
+    type: string
+    description: "A comma-separated list of environments to clean up."
+    is_mandatory: true
+-   name: Max Hours Back
+    default_value: 48
+    type: integer
+    description: "The maximum age of cases in hours. Cases older than this will be\
+      \ closed."
+    is_mandatory: true
+-   name: Tags Whitelist
+    type: string
+    description: "A comma-separated list of tags. Cases with any of these tags will\
+      \ not be closed."
+    is_mandatory: false

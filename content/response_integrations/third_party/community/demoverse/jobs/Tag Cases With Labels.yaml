@@ -1,0 +1,16 @@
+creator: josemarin@google.com
+description: "Applies tags to cases based on labels."
+name: Tag Cases With Labels
+integration: Demoverse
+parameters:
+-   name: Relevant Environments
+    default_value: LogStory,Cymbal
+    type: string
+    description: "A comma-separated list of environments to tag cases from."
+    is_mandatory: true
+-   name: Max Hours Back
+    default_value: 48
+    type: integer
+    description: "The maximum age of cases in hours. Cases older than this will be\
+      \ closed."
+    is_mandatory: true

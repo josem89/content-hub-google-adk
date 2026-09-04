@@ -1,0 +1,37 @@
+creator: josemarin@google.com
+description: "Minimum recommended job interval: 5 Mins - This will vary depending\
+  \ on the size of the files and the amount of logs."
+name: Stream Use Cases Events V2
+integration: Demoverse
+parameters:
+-   name: Use Case Whitelist
+    default_value: folder:usecase
+    type: string
+    description: "List of whitelisted Use Cases"
+    is_mandatory: true
+-   name: Initial Batch Size
+    default_value: 10m
+    type: string
+    description: "How long to replay in the first job run: {Integer}{TimeUnit(h,m,s)} e.g 2h will stream the first two hours of logs in the first run"
+    is_mandatory: true
+-   name: Wait Time
+    default_value: 24h
+    type: string
+    description: "Add a Wait time between Streams"
+    is_mandatory: true
+-   name: GCS Bucket Name
+    type: string
+    description: "GCS Bucket Name to use"
+    is_mandatory: false
+-   name: GCS Prefix
+    type: string
+    description: "GCS Prefix/Folder"
+    is_mandatory: false
+-   name: GCS SA Key
+    type: password
+    description: "GCS Service Account JSON Key"
+    is_mandatory: false
+-   name: GCS Workload Identity Email
+    type: string
+    description: "GCS Workload Identity Email"
+    is_mandatory: false

@@ -1,0 +1,10 @@
+creator: josemarin@google.com
+description: "Sends audit data to a Google SecOps instance."
+name: Send Audit Data to SecOps
+integration: Demoverse
+parameters:
+
+-   name: Namespace
+    type: string
+    description: "Namespace"
+    is_mandatory: false

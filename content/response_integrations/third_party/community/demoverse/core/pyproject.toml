@@ -1,0 +1,34 @@
+[project]
+name = "demoverse"
+version = "2"
+description = "A demonstration integration that syncs content with a Git repository and replays SOAR use cases."
+authors = [
+    { name = "Jose Marin", email = "josemarin@google.com" },
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "dulwich>=0.21.0,<1.0.0",
+    "tip-common>=3.0.0,<4.0.0",
+    "pympler>=1.0.1,<2.0.0",
+    "python-evtx>=0.8.1,<1.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "google-auth>=2.22.0,<3.0.0",
+    "google-auth-oauthlib>=1.0.0,<2.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "environmentcommon",
+    "integration-testing",
+    "pytest-json-report>=1.5.0",
+    "pytest>=8.3.5",
+    "soar-sdk",
+    "tipcommon",
+]
+
+[tool.uv.sources]
+soar-sdk = { git = "https://github.com/chronicle/soar-sdk.git" }
+integration-testing = { path = "../../../../../../packages/integration_testing_whls/integration_testing-2.2.7-py3-none-any.whl" }
+tipcommon = { path = "../../../../../../packages/tipcommon/whls/TIPCommon-2.2.7-py2.py3-none-any.whl" }
+environmentcommon = { path = "../../../../../../packages/envcommon/whls/EnvironmentCommon-1.0.2-py2.py3-none-any.whl" }
+

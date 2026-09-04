@@ -1,0 +1,40 @@
+identifier: Demoverse
+name: Demoverse
+parameters:
+- name: Instance Name
+  type: string
+  description: Instance name for Chronicle API
+  is_mandatory: true
+  integration_identifier: Demoverse
+  default_value: projects/{project_id}/locations/{region}/instances/{instance}
+- name: Region
+  type: string
+  description: Region where the Secops instance is located
+  is_mandatory: true
+  integration_identifier: Demoverse
+  default_value: us
+- name: Forwarder ID
+  type: password
+  description: Forwarder ID to use with Demoverse
+  is_mandatory: true
+  integration_identifier: Demoverse
+- name: Chronicle SA
+  type: password
+  description: Service account Jason key with Chronicle API admin permission
+  is_mandatory: false
+  integration_identifier: Demoverse
+- name: Workload Identity Email
+  type: string
+  description: Workload Identity Email for delegated permissions
+  is_mandatory: false
+  integration_identifier: Demoverse
+- name: Verify SSL
+  type: boolean
+  description: Verify SSL
+  is_mandatory: false
+  default_value: true
+  integration_identifier: Demoverse
+categories:
+- Demo
+svg_logo_path: resources/logo.svg
+image_path: resources/image.png

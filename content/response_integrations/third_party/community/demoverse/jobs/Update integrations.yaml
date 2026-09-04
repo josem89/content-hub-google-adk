@@ -1,0 +1,9 @@
+creator: josemarin@google.com
+description: "Checks for and applies updates to installed integrations."
+name: Update integrations
+integration: Demoverse
+parameters:
+-   name: Whitelist
+    type: string
+    description: "A comma-separated list of integrations to exclude from updates."
+    is_mandatory: false

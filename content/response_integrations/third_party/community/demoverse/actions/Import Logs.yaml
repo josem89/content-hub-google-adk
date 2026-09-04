@@ -1,0 +1,74 @@
+creator: josemarin@google.com
+description: "Imports raw logs or UDM events directly into Google SecOps, with options\
+  \ for timestamp manipulation and labeling."
+dynamic_results_metadata:
+-   result_example: '{}'
+    result_name: JsonResult
+    show_result: true
+integration_identifier: Demoverse
+name: Import Logs
+parameters:
+-   default_value: 'false'
+    description: "If enabled, the action will import the content as UDM events instead\
+      \ of raw logs."
+    is_mandatory: false
+    name: UDM
+    type: boolean
+-   default_value: null
+    description: "The log type to assign to the raw logs, which determines the parser\
+      \ to be used. Mandatory if 'UDM' is disabled."
+    is_mandatory: false
+    name: Log Type
+    type: string
+-   default_value: 'false'
+    description: "If enabled, allows importing multiple log entries from the 'Content'\
+      \ field, with each log on a new line."
+    is_mandatory: false
+    name: Multiple Entries
+    type: boolean
+-   default_value: "\
+      <<<<log1>>>>\
+      <<<<log2>>>>\
+      <<<<log3>>>>\
+      <<<<log4>>>>"
+    description: "The log or event content to import. For multiple raw logs, place each\
+      \ on a new line. For UDM, provide a JSON array of UDM events."
+    is_mandatory: true
+    name: Content
+    type: CODE
+-   default_value: null
+    description: "The start time of the logs' original time window. This is used as\
+      \ a reference when 'Update Log Times' is enabled. Format 'YYYY-MM-DDTHH:MI:SS'."
+    is_mandatory: false
+    name: Time Window Start Time
+    type: string
+-   default_value: null
+    description: "The end time of the logs' original time window. Used as a reference\
+      \ when 'Update Log Times' is enabled. If not provided, the current time is\
+      \ used. Format 'YYYY-MM-DDTHH:MI:SS'."
+    is_mandatory: false
+    name: Time Window End Time
+    type: string
+-   default_value: 'false'
+    description: "If enabled, updates log timestamps to be current while preserving\
+      \ their relative time differences."
+    is_mandatory: false
+    name: Update Log Times
+    type: boolean
+-   default_value: ''
+    description: "The Google SecOps namespace where the logs/events will be imported.\
+      \ If left blank, the default namespace is used."
+    is_mandatory: false
+    name: Namespace
+    options:
+    - Cymbal
+    - LogStory
+    - Default Environment
+    type: string
+-   default_value: '{"key":"value"}'
+    description: "A JSON object of key-value pairs to be added as ingestion labels\
+      \ to all imported events."
+    is_mandatory: false
+    name: Ingestion Labels
+    type: CODE
+script_result_name: ScriptResult

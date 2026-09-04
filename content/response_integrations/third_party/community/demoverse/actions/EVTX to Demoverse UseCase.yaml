@@ -1,0 +1,20 @@
+creator: 48a0ca69-9bab-460e-9606-1fcf5bb82968
+description: "Creates Demoverse use case event files from an EVTX zip file."
+dynamic_results_metadata:
+-   result_example_path: resources/EVTX_to_Demoverse_UseCase_example.json
+    result_name: JsonResult
+    show_result: true
+integration_identifier: Demoverse
+name: EVTX to Demoverse UseCase
+parameters:
+-   default_value: /tmp/
+    description: Path where the EVTX/xml files are located
+    is_mandatory: true
+    name: EVTX Zip File Path
+    type: string
+-   default_value: /tmp/usecases
+    description: Directory where the Parsed logs will be saved
+    is_mandatory: true
+    name: Target Directory
+    type: string
+script_result_name: Path
